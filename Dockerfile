@@ -5,18 +5,10 @@ LABEL version="0.1.0"
 LABEL description="Builds a docker-in-docker image that includes python 3.6 & test requirements."
 
 USER root
-##HERE OFICIAL PITHON DOCKER FILE
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-		tcl \
-		tk \
-	&& rm -rf /var/lib/apt/lists/*
-
-ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
-ENV PYTHON_VERSION 3.6.3
-
-RUN set -ex \
-	&& apt-get install -y --no-install-recommends \
+RUN set -ex; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
 		autoconf \
 		automake \
 		bzip2 \
@@ -67,6 +59,17 @@ RUN set -ex \
 		) \
 	; \
 	rm -rf /var/lib/apt/lists/*
+##HERE OFICIAL PITHON DOCKER FILE
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		tcl \
+		tk \
+	&& rm -rf /var/lib/apt/lists/*
+
+ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
+ENV PYTHON_VERSION 3.6.3
+
+
 RUN set -ex \
 	&& buildDeps=' \
 		dpkg-dev \
