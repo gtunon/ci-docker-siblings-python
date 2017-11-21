@@ -97,9 +97,7 @@ RUN set -ex; \
 
 #END OF OFFICIAL PYTHON DOCKERFILE
 
-RUN pip install pyyaml
-
-RUN pip install tox
+RUN pip install --upgrade pip flask_testing coverage nose pluggy py randomize tox pyyaml
 
 ENV WORKSPACE /home/jenkins
 
