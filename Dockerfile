@@ -144,6 +144,8 @@ RUN set -ex; \
 
 RUN pip install pyyaml
 
+RUN pip install tox
+
 ENV WORKSPACE /home/jenkins
 
 USER jenkins 
