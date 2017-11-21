@@ -8,7 +8,7 @@ USER root
 
 RUN python3 -V
 
-RUN apt-get install -y python3-pip build-essential libssl-dev libffi-dev python-dev 
+RUN apt-get install -y python3-pip build-essential libssl-dev libffi-dev python3-dev
 RUN add-apt-repository ppa:jonathonf/python-3.6 \
 	&& apt-get update \
 	&& apt-get install -y python3.6 libbz2-dev libreadline-dev libsqlite3-dev libevent-dev tk-dev
